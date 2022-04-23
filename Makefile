@@ -17,4 +17,4 @@ build: is-go-installed ## Build binary file
 	printf "\033[32mBuild done!\033[0m\n"
 
 run: is-gow-installed ## Run and watch for changes
-	gow -e=go,mod,html,css run -ldflags="-w -s" .
+	gow -e=go,mod,html,css,js run -ldflags="-w -s" .
