@@ -11,6 +11,13 @@ body {
     background-image: url('/resources/background-white.png');
 }
 
+.content-container {
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
 .tab-label {
     color: white;
     background-color: #961C26;
