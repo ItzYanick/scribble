@@ -9,6 +9,12 @@ help: ## Display usage
 is-go-installed:
 	which go >/dev/null 2>&1 || { echo >&2 "'go' is required.\nPlease install it."; exit 1; }
 
+is-gow-installed:
+	which gow >/dev/null 2>&1 || { echo >&2 "'gow' is required.\nPlease install it."; exit 1; }
+
 build: is-go-installed ## Build binary file
 	CGO_ENABLED=0 go build -ldflags="-w -s" -o scribblers .
 	printf "\033[32mBuild done!\033[0m\n"
+
+run: is-gow-installed ## Run and watch for changes
+	gow -e=go,mod,html,css run -ldflags="-w -s" .
